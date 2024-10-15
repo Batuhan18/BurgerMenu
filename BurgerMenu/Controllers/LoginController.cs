@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace BurgerMenu.Controllers
 {
+    
     public class LoginController : Controller
     {
         BurgerMenuContext context=new BurgerMenuContext();
@@ -26,7 +27,7 @@ namespace BurgerMenu.Controllers
             {
                 FormsAuthentication.SetAuthCookie(values.Username, false);
                 Session["x"] = values.Username.ToString();
-                return RedirectToAction("ProductList", "Product", "Admin");
+                return RedirectToAction("ProductList", "Product", new {area= "Admin" });
 
             }
             else
