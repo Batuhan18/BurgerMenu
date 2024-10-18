@@ -14,5 +14,6 @@ namespace BurgerMenu.Context
         public DbSet<DealOfTheDay> DealOfTheDays { get; set; }
         public DbSet<Testimonial> Testimonials{ get; set; }
         public DbSet<Admin> Admins{ get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
     }
 }
