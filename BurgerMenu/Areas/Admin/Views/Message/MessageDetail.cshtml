@@ -1,0 +1,46 @@
+﻿@model List<BurgerMenu.Entites.Message>
+
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row">
+            <!-- Başlık Kartı -->
+            <div class="col-md-6">
+                <div class="card text-center p-3 mb-3">
+                    <h5 class="card-title" style="color: #3498db;">Başlık</h5>
+                    <p class="card-text"><strong>@item.Title</strong></p>
+                </div>
+            </div>
+            <!-- Tarih Kartı -->
+            <div class="col-md-6">
+                <div class="card text-center p-3 mb-3">
+                    <h5 class="card-title" style="color: #e74c3c;">Tarih</h5>
+                    <p class="card-text"><strong>@item.SendDate.ToString("dd/MM/yyyy")</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Gönderen Bilgisi -->
+            <div class="col-md-12">
+                <div class="card p-3 mb-3">
+                    <h5 class="card-title" style="color: #2ecc71;">Gönderen</h5>
+                    <p class="card-text"><strong>@item.SenderEMail</strong></p>
+                </div>
+            </div>
+            <!-- Mesaj İçeriği -->
+            <div class="col-md-12">
+                <div class="card p-3 mb-3">
+                    <h5 class="card-title" style="color: #f39c12;">Mesaj İçeriği</h5>
+                    <p class="card-text" style="min-height: 100px; white-space: pre-wrap;"><strong>@item.Content</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+

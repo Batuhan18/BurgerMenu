@@ -1,48 +1,54 @@
-﻿<footer class="site-footer site-bg-dark site-section">
+﻿@model BurgerMenu.Entites.Subscribe
+
+<footer class="site-footer site-bg-dark site-section">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4 site-animate">
-                        <h2 class="site-heading-2">About Us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet. Sed labore ipsum vel dolore, quis, culpa et magni autem sequi facere eos tenetur, ex?</p>
+                        <h2 class="site-heading-2">Hakkımızda</h2>
+                        <p>
+                            Hoş geldiniz! Eatwell, lezzet dolu bir yolculuğa çıkmak için kapılarını açtı. Misyonumuz, misafirlerimize unutulmaz bir yemek deneyimi sunmak ve her ziyareti özel kılmaktır.
+
+                            Restoranımız, taze ve yerel malzemelerle hazırlanan birbirinden lezzetli yemekler sunmaktadır. Şeflerimiz, geleneksel tarifleri modern dokunuşlarla harmanlayarak her tabakta bir sanat eseri yaratmaktadır. Menüdeki her bir yemek, damak tadınıza hitap edecek şekilde özenle tasarlanmıştır.
+
+                            Sıcak ve samimi bir atmosferde, sevdiklerinizle birlikte keyifli anlar geçirebilmeniz için her detayı düşündük. Konuklarımızın memnuniyeti, bizim için en büyük öncelik. Ayrıca, özel etkinlikleriniz için de mekanımızı tercih edebilirsiniz; sizin için özel menüler ve dekorasyon seçenekleri sunuyoruz.
+
+                            Eatwell’nda sadece bir yemek değil, aynı zamanda paylaşacak anılar da yaratmayı amaçlıyoruz. Bizi ziyaret ettiğinizde, sadece lezzetli yemeklerin tadını çıkarmakla kalmayacak, aynı zamanda sıcak bir karşılama ile de karşılanacaksınız.
+
+                            Sizi aramızda görmek için sabırsızlanıyoruz!
+                        </p>
+
+                        <label>Email:</label>
+                        @Html.TextAreaFor(x => x.Email, new { @class = "form-control" })
+                        <br />
+                        <button style="margin-left:100px">Abone Ol</button>
                     </div>
                     <div class="col-md-1"></div>
                     <div class="col-md-3 site-animate">
                         <div class="site-footer-widget mb-4">
-                            <h2 class="site-heading-2">The Restaurant</h2>
+                            <h2 class="site-heading-2">Restaurant</h2>
                             <ul class="list-unstyled">
-                                <li><a href="#" class="py-2 d-block">About Us</a></li>
-                                <li><a href="#" class="py-2 d-block">Chefs</a></li>
-                                <li><a href="#" class="py-2 d-block">Events</a></li>
-                                <li><a href="#" class="py-2 d-block">Contact</a></li>
+                                <li><a href="#" class="py-2 d-block">Hakkımızda</a></li>
+                                <li><a href="#" class="py-2 d-block">Şefler</a></li>
+                                <li><a href="#" class="py-2 d-block">Etkinlikler</a></li>
+                                <li><a href="#" class="py-2 d-block">İletişim</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-2 site-animate">
                         <div class="site-footer-widget mb-4">
-                            <h2 class="site-heading-2">Useful links</h2>
+                            <h2 class="site-heading-2">Kullanılan Linkler</h2>
                             <ul class="list-unstyled">
-                                <li><a href="#" class="py-2 d-block">Foods</a></li>
-                                <li><a href="#" class="py-2 d-block">Drinks</a></li>
-                                <li><a href="#" class="py-2 d-block">Breakfast</a></li>
-                                <li><a href="#" class="py-2 d-block">Brunch</a></li>
-                                <li><a href="#" class="py-2 d-block">Dinner</a></li>
+                                <li><a href="#" class="py-2 d-block">Yemekler</a></li>
+                                <li><a href="#" class="py-2 d-block">İçecekler</a></li>
+                                <li><a href="#" class="py-2 d-block">Kahvaltı</a></li>
+                                <li><a href="#" class="py-2 d-block">Atıştırmalık</a></li>
+                                <li><a href="#" class="py-2 d-block">Akşam Yemeği</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2 site-animate">
-                        <div class="site-footer-widget mb-4">
-                            <h2 class="site-heading-2">Useful links</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="py-2 d-block">Foods</a></li>
-                                <li><a href="#" class="py-2 d-block">Drinks</a></li>
-                                <li><a href="#" class="py-2 d-block">Breakfast</a></li>
-                                <li><a href="#" class="py-2 d-block">Brunch</a></li>
-                                <li><a href="#" class="py-2 d-block">Dinner</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -61,7 +67,7 @@
                 <p>
                     &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    <script>document.write(new Date().getFullYear());</script> Tüm Hakları Saklıdır| <i class="icon-heart" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Batuhan Avcıoğlu</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>

@@ -1,0 +1,55 @@
+﻿@model BurgerMenu.Entites.CreditCard
+@{
+    ViewBag.Title = "CreditCard";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/credit-card-style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Kredi Kartı Görünümü -->
+<div class="card-wrapper">
+    <div class="card">
+        <div class="chip"></div>
+        <div class="logo">BANK LOGO</div>
+        <div class="card-front">
+            <div class="card-number">#### #### #### ####</div>
+            <div class="card-holder">AD SOYAD</div>
+            <div class="card-expiration">MM / YY</div>
+        </div>
+        <div class="card-back">
+            <div class="card-cvc">###</div>
+        </div>
+    </div>
+</div>
+
+<!-- Ödeme Formu -->
+<form asp-action="ProcessPayment" method="post" id="payment-form">
+    <label>Kart Numarası</label>
+    <input type="text" id="card-number" maxlength="19" placeholder="1234 5678 9012 3456" />
+
+    <label>Kart Sahibi</label>
+    <input type="text" id="card-holder" placeholder="AD SOYAD" />
+
+    <div style="display: flex; justify-content: space-between;">
+        <div style="width: 48%;">
+            <label>Son Kullanma Tarihi (Ay/Yıl)</label>
+            <input type="text" id="exp-month" maxlength="2" placeholder="MM" />
+        </div>
+        <div style="width: 48%;">
+            <label></label> <!-- Boş bırakıyoruz -->
+            <input type="text" id="exp-year" maxlength="2" placeholder="YY" />
+        </div>
+    </div>
+
+    <label>CVC</label>
+    <input type="text" id="cvc" maxlength="3" placeholder="123" />
+
+    <button type="submit">Ödeme Yap</button>
+</form>
+
+<script src="~/Scripts/credit-card-script.js"></script>
+
+
+

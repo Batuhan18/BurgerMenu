@@ -15,5 +15,11 @@ namespace BurgerMenu.Context
         public DbSet<Testimonial> Testimonials{ get; set; }
         public DbSet<Admin> Admins{ get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Message> Messages{ get; set; }
+        public DbSet<AboutUs> AboutUss { get; set; }
+        public DbSet<Communucation> Communucations { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
+    
     }
 }

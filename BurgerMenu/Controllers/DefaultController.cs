@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using BurgerMenu.Context;
 using BurgerMenu.Entites;
 
@@ -10,11 +11,21 @@ namespace BurgerMenu.Controllers
 {
     public class DefaultController : Controller
     {
-       
+
         BurgerMenuContext context = new BurgerMenuContext();
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Index(Communucation com)
+        {
+            com.Date = DateTime.Now;
+            com.IsRead = false;
+            context.Communucations.Add(com);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public PartialViewResult PartialHead()
@@ -28,7 +39,8 @@ namespace BurgerMenu.Controllers
         }
         public PartialViewResult PartialAbout()
         {
-            return PartialView();
+            var values = context.AboutUss.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult PartialOffer()
@@ -40,8 +52,10 @@ namespace BurgerMenu.Controllers
         public PartialViewResult PartialMenu()
         {
             var values = context.Products.ToList();
-            return PartialView(values);
+            return PartialView("PartialMenu",values);
         }
+
+
         public PartialViewResult PartialCategory()
         {
             var values = context.Categories.Take(6).ToList();
@@ -53,8 +67,20 @@ namespace BurgerMenu.Controllers
             return PartialView();
         }
 
-        public PartialViewResult PartialContact()
+        public PartialViewResult PartialContactInfo()
         {
+            var values = context.Communucations.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialContactHead()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialLocation()
+        {
+            ViewBag.mapLocation = context.AboutUss.Select(x => x.MapLocation).FirstOrDefault();
             return PartialView();
         }
 
@@ -62,6 +88,19 @@ namespace BurgerMenu.Controllers
         {
             return PartialView();
         }
+        [HttpPost]
+        public ActionResult PartialFooter(Subscribe sub)
+        {
+  
+            if (ModelState.IsValid)
+            {
+                context.Subscribes.Add(sub);
+                context.SaveChanges();
+                return RedirectToAction("Index","Default");
+            }
+            return PartialView(); 
+        }
+
         public PartialViewResult PartialScript()
         {
             return PartialView();
@@ -81,5 +120,7 @@ namespace BurgerMenu.Controllers
             context.SaveChanges();
             return PartialView();
         }
+
+
     }
 }

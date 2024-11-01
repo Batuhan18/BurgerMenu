@@ -130,19 +130,29 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChartController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CreditCardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\IstatistikController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReservationController.cs" />
     <Compile Include="Context\BurgerMenuContext.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Entites\AboutUs.cs" />
     <Compile Include="Entites\Admin.cs" />
     <Compile Include="Entites\Category.cs" />
+    <Compile Include="Entites\Communucation.cs" />
+    <Compile Include="Entites\CreditCard.cs" />
     <Compile Include="Entites\DealOfTheDay.cs" />
+    <Compile Include="Entites\Message.cs" />
     <Compile Include="Entites\Product.cs" />
     <Compile Include="Entites\Reservation.cs" />
+    <Compile Include="Entites\Subscribe.cs" />
     <Compile Include="Entites\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +177,26 @@
     <Compile Include="Migrations\202410181248494_mig5.Designer.cs">
       <DependentUpon>202410181248494_mig5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202410241006162_mig6.cs" />
+    <Compile Include="Migrations\202410241006162_mig6.Designer.cs">
+      <DependentUpon>202410241006162_mig6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410261015322_mig7.cs" />
+    <Compile Include="Migrations\202410261015322_mig7.Designer.cs">
+      <DependentUpon>202410261015322_mig7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410281220369_mig9.cs" />
+    <Compile Include="Migrations\202410281220369_mig9.Designer.cs">
+      <DependentUpon>202410281220369_mig9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410281904052_mig10.cs" />
+    <Compile Include="Migrations\202410281904052_mig10.Designer.cs">
+      <DependentUpon>202410281904052_mig10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410301713116_mig11.cs" />
+    <Compile Include="Migrations\202410301713116_mig11.Designer.cs">
+      <DependentUpon>202410301713116_mig11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -190,6 +220,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\credit-card-style.css" />
     <Content Include="eatwell-master\css\ajax-loader.gif" />
     <Content Include="eatwell-master\css\animate.css" />
     <Content Include="eatwell-master\css\bootstrap-datepicker.css" />
@@ -1686,7 +1717,56 @@
     <Content Include="eatwell-master\images\.DS_Store" />
     <Content Include="eatwell-master\prepros-6.config" />
     <Content Include="eatwell-master\scss\style.scss" />
+    <Content Include="Areas\Admin\Views\Message\Inbox.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\SendBox.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\NewMessage.cshtml" />
+    <Content Include="Areas\Admin\Views\CreditCard\CreditCard.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\MessageDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Istatistik\Index.cshtml" />
+    <Content Include="web2\css\bootstrap.css" />
+    <Content Include="web2\css\clndr.css" />
+    <Content Include="web2\css\jqvmap.css" />
+    <Content Include="web2\css\nav.css" />
+    <Content Include="web2\css\style.css" />
+    <Content Include="web2\images\ar2.png" />
+    <Content Include="web2\images\arrows.png" />
+    <Content Include="web2\images\avatar.jpg" />
+    <Content Include="web2\images\avatar1.jpg" />
+    <Content Include="web2\images\avatar2.jpg" />
+    <Content Include="web2\images\img-sprite.png" />
+    <Content Include="web2\images\into.png" />
+    <Content Include="web2\images\into1.png" />
+    <Content Include="web2\images\logo.png" />
+    <Content Include="web2\images\pp.jpg" />
+    <Content Include="web2\images\pp0.jpg" />
+    <Content Include="web2\images\pp01.jpg" />
+    <Content Include="web2\images\settings.png" />
+    <Content Include="web2\images\tick-mark.png" />
+    <Content Include="web2\index.html" />
+    <Content Include="web2\js\Chart1.js" />
+    <Content Include="web2\js\clndr.js" />
+    <Content Include="web2\js\easyResponsiveTabs.js" />
+    <Content Include="web2\js\jquery.easydropdown.js" />
+    <Content Include="web2\js\jquery.min.js" />
+    <Content Include="web2\js\jquery.nicescroll.js" />
+    <Content Include="web2\js\jquery.vmap.js" />
+    <Content Include="web2\js\jquery.vmap.sampledata.js" />
+    <Content Include="web2\js\jquery.vmap.world.js" />
+    <Content Include="web2\js\main.js" />
+    <Content Include="web2\js\moment-2.2.1.js" />
+    <Content Include="web2\js\site.js" />
+    <Content Include="web2\js\underscore-min.js" />
+    <Content Include="web2\resimler\book1.jpg" />
+    <Content Include="web2\resimler\book2.jpg" />
+    <Content Include="web2\resimler\book3.jpg" />
+    <Content Include="web2\resimler\book4.jpg" />
+    <Content Include="web2\resimler\book5.jpg" />
+    <Content Include="web2\resimler\img1.jpg" />
+    <Content Include="web2\w3layouts-License.txt" />
+    <Content Include="Areas\Admin\Views\Chart\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservation\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\credit-card-script.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
@@ -1721,11 +1801,13 @@
     <Content Include="Views\Default\PartialOffer.cshtml" />
     <Content Include="Views\Default\PartialMenu.cshtml" />
     <Content Include="Views\Default\PartialGaleri.cshtml" />
-    <Content Include="Views\Default\PartialContact.cshtml" />
     <Content Include="Views\Default\PartialFooter.cshtml" />
     <Content Include="Views\Default\PartialScript.cshtml" />
     <Content Include="Views\Default\PartialCategory.cshtml" />
     <Content Include="Views\Default\PartialReservation.cshtml" />
+    <Content Include="Views\Default\PartialContactInfo.cshtml" />
+    <Content Include="Views\Default\PartialContactHead.cshtml" />
+    <Content Include="Views\Default\PartialLocation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1781,6 +1863,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410181248494_mig5.resx">
       <DependentUpon>202410181248494_mig5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410241006162_mig6.resx">
+      <DependentUpon>202410241006162_mig6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410261015322_mig7.resx">
+      <DependentUpon>202410261015322_mig7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410281220369_mig9.resx">
+      <DependentUpon>202410281220369_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410281904052_mig10.resx">
+      <DependentUpon>202410281904052_mig10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410301713116_mig11.resx">
+      <DependentUpon>202410301713116_mig11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

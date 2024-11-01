@@ -1,0 +1,60 @@
+﻿@model List<BurgerMenu.Entites.Reservation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Rezervasyon Listesi</h4>
+            <p class="card-description">
+
+            </p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Rezervasyon Id</th>
+                            <th>Adı</th>
+                            <th>Soyadı</th>
+                            <th>Email</th>
+                            <th>Telefon</th>
+                            <th>Kişi Sayısı</th>
+                            <th>Tarih</th>
+                            <th>Saat</th>
+                            <th>İptal</th>
+                            <th>Onayla</th>
+                            <th>Ekleme</th>
+                         
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ReservationId</td>
+                                <td>@item.Name</td>
+                                <td>@item.Surname</td>
+                                <td>@item.Email</td>
+                                <td>@item.Phone</td>
+                                <td>@item.PeopleCount</td>
+                                <td>@item.ReservationDate</td>
+                                <td>@item.Time</td>
+                                <td><a href="#" class="btn btn-danger">İptal</a></td>
+                                <td><a href="#" class="btn btn-success">Onayla</a></td>
+                                <td><a href="#" class="btn btn-info">Ekleme</a></td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

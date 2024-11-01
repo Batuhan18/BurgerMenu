@@ -1,50 +1,76 @@
-﻿
-@{ 
+﻿@{
     Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
-@Html.Action("PartialHead","Default")
+@Html.Action("PartialHead", "Default")
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
 
-    @Html.Action("PartialNavbar","Default")
+    @Html.Action("PartialNavbar", "Default")
     <!-- END nav -->
-
-
     <!-- END section -->
 
-    @Html.Action("PartialAbout","Default")
-    <!-- END section -->
-
-
-    @Html.Action("PartialOffer","Default")
-    <!-- END section -->
-
-    @Html.Action("PartialMenu","Default")
-    <!-- END section -->
-
-    
-    <!-- END section -->
-
-    @Html.Action("PartialGaleri","Default")
-    <!-- END section -->
-
-    @Html.Action("PartialContact","Default")
-    <div id="map"></div>
+    @Html.Action("PartialAbout", "Default")
     <!-- END section -->
 
 
-    @Html.Action("PartialFooter","Default")
+    @Html.Action("PartialOffer", "Default")
+    <!-- END section -->
+
+    @Html.Action("PartialMenu", "Default")
+    <!-- END section -->
+   
+    <!-- END section -->
+
+    @Html.Action("PartialGaleri", "Default")
+    <!-- END section -->
+
+    <section class="site-section bg-light" id="section-contact">
+        <div class="container">
+            <div class="row">
+
+                @Html.Action("PartialContactHead","Default")
+
+                <div class="col-md-7 mb-5 site-animate">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Ad</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ad">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Mesaj</label>
+                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Mesajınızı Yazın..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-lg" value="Mesaj Gönder">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+                @Html.Action("PartialContactInfo","Default")
+
+            </div>
+        </div>
+    </section>
+    @Html.Action("PartialLocation","Default")
+    <!-- END section -->
+
+
+    @Html.Action("PartialFooter", "Default")
 
 
 
 
     <!-- Modal -->
-    @Html.Action("PartialReservation","Default")
+    @Html.Action("PartialReservation", "Default")
 
     <!-- END Modal -->
     <!-- loader -->
-  @Html.Action("PartialScript","Default")
+    @Html.Action("PartialScript", "Default")
 
 
 </body>

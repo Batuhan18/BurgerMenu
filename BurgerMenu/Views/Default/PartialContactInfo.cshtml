@@ -1,0 +1,16 @@
+﻿@model List<BurgerMenu.Entites.Communucation>
+
+<div class="col-md-4 site-animate">
+    @foreach (var item in Model)
+    {
+        <p><img src="images/about_img_1.jpg" alt="" class="img-fluid"></p>
+        <p class="text-black">
+            Address: <br>@item.Address <br>
+            Phone: <br> @item.Phone<br> <br>
+            Email: <br> <a href="mailto:info@yoursite.com">@item.Email</a>
+        </p>
+    }
+
+
+
+</div>

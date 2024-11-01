@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+
+    // Kart verileri ve renkleri listede saklanır.
+    var cardData = new List<(string Color, string Value, string Text)>
+{
+        ("#1abc9c", ViewBag.d1.ToString(), "Mesaj Sayısı"),
+        ("#2ecc71", ViewBag.d2.ToString(), "Admin Sayısı"),
+        ("#3498db", ViewBag.d3.ToString(), "Kategori Sayısı"),
+        ("#9b59b6", ViewBag.d4.ToString(), "Kategori Sayısı"),
+        ("blue", ViewBag.d5.ToString(), "Rezervasyon Sayısı"),
+        ("cornflowerblue", ViewBag.d6.ToString(), "Abone Sayısı"),
+        ("aqua", ViewBag.d7.ToString(), "Yorum Sayısı"),
+        ("chocolate", ViewBag.d8.ToString(), "Tebrik Mesajı Sayısı")
+    };
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web2/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/web2/css/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Metro Panel Responsive web template" />
+    <script src="js/zingchart.min.js"></script>
+    <link href="~/web2/css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web2/js/main.js"></script> <!-- Resource jQuery -->
+    <script src="~/web2/js/Chart1.js"></script>
+    <style>
+        .card {
+            padding: 20px;
+            margin: 10px;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            width: 20%; /* Her satırda 4 kart olması için genişliği ayarlarız */
+        }
+
+        .total-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .icon-text h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="total-content">
+        <!-- İlk satırda dört kart -->
+        <div class="row">
+            @foreach (var card in cardData.Take(4))
+            {
+                <div class="card" style="background-color:@card.Color;">
+                    <div class="icon-text">
+                        <h3>@card.Value</h3>
+                        <p>@card.Text</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- İkinci satırda dört kart -->
+        <div class="row">
+            @foreach (var card in cardData.Skip(4).Take(4))
+            {
+                <div class="card" style="background-color:@card.Color;">
+                    <div class="icon-text">
+                        <h3>@card.Value</h3>
+                        <p>@card.Text</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+
+</html>
