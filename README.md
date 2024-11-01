@@ -1,29 +1,54 @@
 Genel Bakış
+
 Bu proje ile kullanıcılar restorana rezervasyon yapabilir, ürünleri kategorilere göre görüntüleyebilir ve restoran ile iletişim kurabilir hale getirildi. Admin panelinde ise rezervasyonları listeleme ve güncelleme, ürün yönetimi, adminlerin birbirleriyle mesajlaşması, istatistikler ve grafikler gibi birçok özellik sunuldu.
 
 Kullanıcı Tarafı
+
+
 🏠 Anasayfa: Kullanıcılar rezervasyon modülünü kullanarak rezervasyon yapabilirler.
+
 ℹ️ Hakkımızda: Restoran hakkında bilgilere erişim sağlanır.
+
 ⭐ Öne Çıkanlar: Admin tarafından seçilmiş olan popüler yemekler listelenir.
+
 🍽️ Menü: Ürünler kategorilere ayrılarak, her kategoriye özel ürünler kullanıcıya sunulur.
+
 📸 Galeri: Ürün fotoğraflarını içeren bir görsel galeri gösterilir.
+
 📬 İletişim: Kullanıcılar restoran hakkında görüş ve önerilerini mesaj olarak iletebilir.
+
 ✉️ Bülten Aboneliği: Kullanıcılar restoran bültenine e-posta adresleri ile abone olabilir.
+
 Admin Tarafı
+
 📊  Dashboard: Admin paneli açıldığında, sistem verilerini özetleyen bir dashboard görüntülenir.
+
 📂 Kategoriler: Ürün kategorileri listelenir ve kategorilere ürün ekleme, silme, güncelleme işlemleri yapılabilir.
+
 ➕ Yeni Kategori: Bir modal penceresi aracılığıyla hızlı kategori eklenebilir.
+
 🛒 Ürünler: Ürün ekleme, silme ve güncelleme işlemleri yapılabilir.
+
 🍽️ Günün Yemeği: Öne çıkan ürünlerden biri günün yemeği olarak seçilebilir ve kullanıcı tarafında öne çıkarılır.
+
 📅 Rezervasyonlar: Kullanıcıların yaptığı rezervasyonlar görüntülenir, rezervasyon durumu güncellenebilir ve detayları incelenebilir.
+
 📅 Mesajlar: Diğer adminlerden gelen mesajlar burada listelenir ve mesaj detayları modal pencerede görüntülenebilir. Ayrıca yeni mesaj gönderme seçeneği mevcuttur.
+
 ℹ️ Hakkımızda: Kullanıcı tarafında gösterilen “Hakkımızda” alanı admin tarafından düzenlenebilir.
+
 📈 İstatistikler: Sistem verilerinin istatistikleri listelenir. Sayfa her yenilendiğinde başlık renkleri değişir.
+
 📊 Grafikler: Veriler; sütun, çizgi ve halka grafikleriyle görselleştirilir.
+
 📬 Referanslar: Kullanıcıların iletişim panelinden gönderdiği mesajlar burada listelenir ve mesajların okundu/okunmadı durumu güncellenebilir.
+
 💳 Kredi Kartı: Kredi kartı bilgilerini kaydetme ekranı eklenmiştir.
+
 Giriş ve Kayıt
+
 🔑 Giriş Yap: Sisteme giriş yapmak isteyen admin için giriş ekranı sağlanır. Yeni bir hesap açmak isteyenler için kayıt ekranı mevcuttur.
+
 ![Ekran Alıntısı](https://github.com/user-attachments/assets/b5724051-ac94-4813-b1fe-4089c1cf6e63)
 ![Ekran Alıntısı1](https://github.com/user-attachments/assets/fb997afe-5905-40c0-a1aa-d17e1bff85b1)
 ![Ekran Alıntısı2](https://github.com/user-attachments/assets/8871b475-266e-4d12-bbb2-91bfd92913ea)
